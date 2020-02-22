@@ -1,5 +1,3 @@
-
-
 import tensorflow as tf
 import numpy as np
 
@@ -16,12 +14,12 @@ def main():
 
   gpus = get_available_gpus()
   print('available devices',gpus)
-  model = build_model(name='resnet_50_v2',
-                num_classes=10000,
-                frozen_layers=(0,-4),
-                input_shape=(224,224,3),
-                base_learning_rate=0.0001)
-  (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
+  model = build_model(name = 'resnet_50_v2',
+                      num_classes = 10000,
+                      frozen_layers = (0, -4),
+                      input_shape = (224, 224, 3),
+                      base_learning_rate = 0.0001)
+  (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
   # Preprocess the data (these are Numpy arrays)
   x_train = x_train.reshape(60000, 784).astype('float32') / 255
