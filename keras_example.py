@@ -14,10 +14,10 @@ def main():
 
   gpus = get_available_gpus()
   print('available devices',gpus)
-  model = build_model(name = 'resnet_50_v2',
-                      num_classes = 10000,
+  model = build_model(name = 'shallow',
+                      num_classes = 10,
                       frozen_layers = (0, -4),
-                      input_shape = (224, 224, 3),
+                      input_shape = (784,),
                       base_learning_rate = 0.0001)
   (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 

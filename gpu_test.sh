@@ -9,6 +9,10 @@
 ##SBATCH --account=bibs-frankmj-condo
 #SBATCH --account=carney-frankmj-condo
 
+# email error reports
+#SBATCH --mail-user=alexander_fengler@brown.edu 
+#SBATCH --mail-type=ALL
+
 # output file
 #SBATCH --output /users/afengler/batch_job_out/gpu_test.out
 
